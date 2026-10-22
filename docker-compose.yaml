@@ -1,0 +1,15 @@
+name: shoppee-cybersec
+
+services:
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - dados:/app/data        # onde fica o arquivo .db (ver abaixo)
+      - uploads:/app/uploads
+    restart: unless-stopped
+
+volumes:
+  dados:
+  uploads:
