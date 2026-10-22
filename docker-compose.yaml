@@ -3,6 +3,8 @@ name: shoppee-cybersec
 services:
   app:
     image: ghcr.io/ralphsblue/shoppee-cybersec:${IMAGEM_TAG:-latest}
+    environment:
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?defina ADMIN_PASSWORD no .env ao lado do compose}
     ports:
       - "127.0.0.1:3000:3000"
     volumes:
