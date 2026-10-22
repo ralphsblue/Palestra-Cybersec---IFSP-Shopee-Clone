@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shopzen- Central do Vendedor</title>
+  <link rel="stylesheet" href="shopzen.css">
+</head>
+<body>
+  <!-- Cabecalho -->
+  <header class="topo">
+    <div class="topo-conteudo">
+      <div class="topo-marca">
+        <div class="logo">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="#fff" aria-hidden="true">
+            <path d="M12 2a4 4 0 0 0-4 4H5.2a1 1 0 0 0-1 .92l-.9 13A1 1 0 0 0 4.3 21h15.4a1 1 0 0 0 1-1.08l-.9-13a1 1 0 0 0-1-.92H16a4 4 0 0 0-4-4zm0 2a2 2 0 0 1 2 2h-4a2 2 0 0 1 2-2zm-3 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+          </svg>
+          <span class="logo-texto">Shopzen</span>
+        </div>
+        <span class="topo-divisor"></span>
+        <span class="topo-titulo">Central do Vendedor</span>
+      </div>
+      <a href="#" class="topo-ajuda">Precisa de ajuda?</a>
+    </div>
+  </header>
+
+  <!-- Corpo -->
+  <main class="palco">
+    <div class="palco-conteudo">
+      <!-- Lado esquerdo -->
+      <section class="apresentacao">
+        <h1 class="apresentacao-titulo">Seja um Vendedor</h1>
+        <h1 class="apresentacao-titulo">Campeão</h1>
+        <p class="apresentacao-texto">
+          Cadastre-se clicando no botão "Página inicial Shopzen" acima, depois
+          clicando no botão "Cadastrar". Com o registro feito, acesse aqui a
+          Central do Vendedor com suas credenciais para gerenciar sua loja.
+        </p>
+        <div class="apresentacao-arte" aria-hidden="true">
+          <svg viewBox="0 0 420 300" width="100%" height="auto">
+            <!-- chao -->
+            <ellipse cx="210" cy="275" rx="180" ry="14" fill="#f4e3d7"/>
+            <!-- caminhao -->
+            <g>
+              <rect x="30" y="180" width="70" height="55" rx="6" fill="#2aa8a8"/>
+              <rect x="100" y="195" width="45" height="40" rx="5" fill="#8fd6d6"/>
+              <rect x="108" y="202" width="28" height="18" rx="3" fill="#eafafa"/>
+              <circle cx="60" cy="243" r="13" fill="#34404a"/>
+              <circle cx="60" cy="243" r="5" fill="#dfe6ea"/>
+              <circle cx="125" cy="243" r="13" fill="#34404a"/>
+              <circle cx="125" cy="243" r="5" fill="#dfe6ea"/>
+            </g>
+            <!-- loja -->
+            <g>
+              <rect x="170" y="150" width="140" height="95" rx="4" fill="#fdf6ec"/>
+              <rect x="170" y="150" width="140" height="20" fill="#f6c343"/>
+              <!-- toldo listrado -->
+              <g>
+                <rect x="165" y="130" width="150" height="26" fill="#fff"/>
+                <rect x="165" y="130" width="25" height="26" fill="#ee4d2d"/>
+                <rect x="215" y="130" width="25" height="26" fill="#ee4d2d"/>
+                <rect x="265" y="130" width="25" height="26" fill="#ee4d2d"/>
+              </g>
+              <!-- vitrine -->
+              <rect x="182" y="178" width="38" height="52" rx="3" fill="#cdeaf0"/>
+              <rect x="262" y="178" width="38" height="52" rx="3" fill="#cdeaf0"/>
+              <!-- porta -->
+              <rect x="228" y="188" width="26" height="57" rx="3" fill="#f0a98f"/>
+              <rect x="231" y="193" width="20" height="12" rx="2" fill="#ee4d2d"/>
+              <text x="241" y="202" font-size="7" fill="#fff" text-anchor="middle" font-family="Arial">OPEN</text>
+            </g>
+            <!-- arvores -->
+            <g>
+              <rect x="326" y="212" width="6" height="30" fill="#8a5a3b"/>
+              <circle cx="329" cy="205" r="16" fill="#58b368"/>
+              <rect x="350" y="222" width="5" height="22" fill="#8a5a3b"/>
+              <circle cx="352" cy="216" r="11" fill="#7cc496"/>
+            </g>
+            <!-- nuvem -->
+            <g fill="#cdeaf0">
+              <circle cx="95" cy="110" r="14"/>
+              <circle cx="112" cy="110" r="18"/>
+              <circle cx="132" cy="112" r="12"/>
+            </g>
+          </svg>
+        </div>
+      </section>
+
+      <!-- Lado direito: card de login -->
+      <section class="login-card">
+        <h2 class="login-titulo">Entrar</h2>
+        <form id="form-login" novalidate>
+          <div class="campo">
+            <input type="text" id="usuario" name="usuario"
+                   placeholder="Número de telefone/Nome do usuário/Email" autocomplete="username">
+          </div>
+          <div class="campo campo-senha">
+            <input type="password" id="senha" name="senha" placeholder="Senha" autocomplete="current-password">
+            <button type="button" class="olho" id="btn-olho" aria-label="Mostrar senha">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#999" stroke-width="2">
+                <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+          <p class="login-erro" id="login-erro">Preencha usuário e senha para entrar.</p>
+          <button type="submit" class="btn-entrar">ENTRAR</button>
+          <div class="login-links">
+            <a href="#">Esqueci minha senha</a>
+          </div>
+          <div class="separador"><span>OU</span></div>
+          <p class="termos">
+            By logging in, you agree to ShopZen's <a href="#">Termos de serviço</a> &amp; <a href="#">Política de privacidade</a>
+          </p>
+          <p class="cadastro">Novo na ShopZen? <a href="#">Cadastrar</a></p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- Barra de cookies -->
+  <div class="cookies">
+    <p>Usamos cookies para melhorar sua experiência na Shopzen. Para mais informações consulte nossa <a href="#">Política de privacidade</a>.</p>
+    <div class="cookies-botoes">
+      <button class="cookies-config" id="cookies-fechar">Configurações de cookies</button>
+      <button class="cookies-aceitar" id="cookies-aceitar">Aceitar todos os cookies</button>
+    </div>
+  </div>
+
+  <script src="shopzen.js"></script>
+</body>
+</html>

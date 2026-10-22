@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shopzen- Central do Vendedor</title>
+  <link rel="stylesheet" href="/css/shopzen.css">
+</head>
+<body>
+  <!-- Cabecalho -->
+  <header class="topo">
+    <div class="topo-conteudo">
+      <div class="topo-marca">
+        <div class="logo">
+          <img src="/img/shopzen-logo.png" alt="Shopzen" class="logo-img">
+        </div>
+        <span class="topo-divisor"></span>
+        <span class="topo-titulo">Central do Vendedor</span>
+      </div>
+      <a href="#" class="topo-ajuda">Precisa de ajuda?</a>
+    </div>
+  </header>
+
+  <!-- Corpo -->
+  <main class="palco">
+    <div class="palco-conteudo">
+      <!-- Lado esquerdo -->
+      <section class="apresentacao">
+        <h1 class="apresentacao-titulo">Seja um Vendedor</h1>
+        <h1 class="apresentacao-titulo">Campeão</h1>
+        <p class="apresentacao-texto">
+          Cadastre-se clicando no botão "Página inicial Shopzen" acima, depois
+          clicando no botão "Cadastrar". Com o registro feito, acesse aqui a
+          Central do Vendedor com suas credenciais para gerenciar sua loja.
+        </p>
+        <div class="apresentacao-arte" aria-hidden="true">
+          <img src="/img/caminhao.png" alt="">
+        </div>
+      </section>
+
+      <!-- Lado direito: card de login -->
+      <section class="login-card">
+        <h2 class="login-titulo">Entrar</h2>
+        <form id="form-login" novalidate>
+          <div class="campo">
+            <input type="text" id="usuario" name="usuario"
+                   placeholder="Número de telefone/Nome do usuário/Email" autocomplete="username">
+          </div>
+          <div class="campo campo-senha">
+            <input type="password" id="senha" name="senha" placeholder="Senha" autocomplete="current-password">
+            <button type="button" class="olho" id="btn-olho" aria-label="Mostrar senha">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#999" stroke-width="2">
+                <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+          <p class="login-erro" id="login-erro">Preencha usuário e senha para entrar.</p>
+          <button type="submit" class="btn-entrar">ENTRAR</button>
+          <div class="login-links">
+            <a href="#">Esqueci minha senha</a>
+          </div>
+          <div class="separador"><span>OU</span></div>
+          <p class="termos">
+            By logging in, you agree to ShopZen's <a href="#">Termos de serviço</a> &amp; <a href="#">Política de privacidade</a>
+          </p>
+          <p class="cadastro">Novo na ShopZen? <a href="#">Cadastrar</a></p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- Barra de cookies -->
+  <div class="cookies">
+    <p>Usamos cookies para melhorar sua experiência na Shopzen. Para mais informações consulte nossa <a href="#">Política de privacidade</a>.</p>
+    <div class="cookies-botoes">
+      <button class="cookies-config" id="cookies-fechar">Configurações de cookies</button>
+      <button class="cookies-aceitar" id="cookies-aceitar">Aceitar todos os cookies</button>
+    </div>
+  </div>
+
+  <script src="/js/shopzen.js"></script>
+</body>
+</html>

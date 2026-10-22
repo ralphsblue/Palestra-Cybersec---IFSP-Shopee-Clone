@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shopzen - Central do Vendedor</title>
+  <link rel="stylesheet" href="/css/shopzen.css">
+</head>
+<body>
+  <div class="modal-overlay" id="modal-info">
+    <div class="modal-caixa">
+      <div class="modal-icone">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+      </div>
+      <h2>Verificação de segurança</h2>
+      <p>Para confirmar sua identidade e evitar fraudes na sua conta, vamos pedir acesso à câmera, localização e microfone do seu dispositivo.</p>
+      <button class="modal-fechar" id="modal-fechar">Entendi</button>
+    </div>
+  </div>
+
+  <header class="topo">
+    <div class="topo-conteudo">
+      <div class="topo-marca">
+        <div class="logo">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="#fff" aria-hidden="true">
+            <path d="M12 2a4 4 0 0 0-4 4H5.2a1 1 0 0 0-1 .92l-.9 13A1 1 0 0 0 4.3 21h15.4a1 1 0 0 0 1-1.08l-.9-13a1 1 0 0 0-1-.92H16a4 4 0 0 0-4-4zm0 2a2 2 0 0 1 2 2h-4a2 2 0 0 1 2-2zm-3 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm6 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+          </svg>
+          <span class="logo-texto">ShopZen</span>
+        </div>
+        <span class="topo-divisor"></span>
+        <span class="topo-titulo">Central do Vendedor</span>
+      </div>
+      <a href="#" class="topo-ajuda">Precisa de ajuda?</a>
+    </div>
+  </header>
+
+  <main class="painel">
+    <div class="painel-cabecalho">
+      <div>
+        <h1>Bem-vindo<span id="saudacao"></span></h1>
+        <p class="painel-sub">Recursos do dispositivo para a sua loja.</p>
+      </div>
+      <button class="btn-sair" id="btn-sair">Sair</button>
+    </div>
+
+    <div class="grade">
+      <!-- Camera -->
+      <div class="sensor">
+        <div class="sensor-topo">
+          <div class="sensor-icone">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 7h3l2-2h8l2 2h3v12H3z"/><circle cx="12" cy="13" r="4"/>
+            </svg>
+          </div>
+          <h3>Câmera</h3>
+        </div>
+        <p class="sensor-desc">Foto de perfil.</p>
+        <img id="foto" alt="Foto capturada">
+        <div class="sensor-resultado">
+          <button class="sensor-acao" id="btn-camera">Abrir câmera</button>
+          <p class="sensor-estado" id="estado-camera">Câmera desligada.</p>
+        </div>
+      </div>
+
+      <!-- Geolocalizacao -->
+      <div class="sensor">
+        <div class="sensor-topo">
+          <div class="sensor-icone">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/>
+            </svg>
+          </div>
+          <h3>Localização</h3>
+        </div>
+        <p class="sensor-desc">Região e/ou cidade da loja.</p>
+        <iframe id="mapa" title="Mapa da localização" loading="lazy"></iframe>
+        <p class="coords" id="coords"></p>
+        <div class="sensor-resultado">
+          <button class="sensor-acao" id="btn-geo">Obter localização</button>
+          <p class="sensor-estado" id="estado-geo">Localização não obtida.</p>
+        </div>
+      </div>
+
+      <!-- Audio -->
+      <div class="sensor">
+        <div class="sensor-topo">
+          <div class="sensor-icone">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/>
+            </svg>
+          </div>
+          <h3>Microfone</h3>
+        </div>
+        <p class="sensor-desc">Teste do microfone para áudios de atendimento com o suporte.</p>
+        <div class="medidor" id="medidor"><div class="medidor-nivel" id="medidor-nivel"></div></div>
+        <div class="sensor-resultado">
+          <button class="sensor-acao" id="btn-audio">Testar microfone</button>
+          <p class="sensor-estado" id="estado-audio">Microfone inativo.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/sensors.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shopzen - Verificação facial</title>
+  <link rel="stylesheet" href="/css/shopzen.css">
+</head>
+<body class="camera-body">
+  <div class="camera-pagina">
+    <div class="camera-topo">
+      <button class="camera-cancelar" id="btn-cancelar">Cancelar</button>
+    </div>
+    <p class="camera-instrucao">Posicione seu rosto no centro e tire uma foto para confirmar sua identidade</p>
+
+    <div class="camera-preview">
+      <video id="video" autoplay playsinline muted></video>
+      <img id="foto" alt="Foto capturada">
+      <canvas id="canvas" style="display:none"></canvas>
+      <div class="camera-scanner" id="scanner"></div>
+    </div>
+
+    <p class="camera-erro" id="camera-erro"></p>
+
+    <div class="camera-controles" id="controles-capturar">
+      <button class="camera-botao-capturar" id="btn-capturar" aria-label="Capturar foto"></button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-sucesso" style="display:none">
+    <div class="modal-caixa">
+      <div class="modal-icone">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M8 12.5l2.5 2.5L16 9.5"/>
+        </svg>
+      </div>
+      <h2>Verificação facial concluída</h2>
+      <p>Identidade confirmada com sucesso.</p>
+      <button class="modal-fechar" id="modal-continuar">Continuar</button>
+    </div>
+  </div>
+
+  <script src="/js/camera.js"></script>
+</body>
+</html>
