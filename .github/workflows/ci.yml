@@ -1,4 +1,3 @@
-# .github/workflows/ci.yml
 name: ci
 
 on:
@@ -6,8 +5,23 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  publicar:
     runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      packages: write
     steps:
       - uses: actions/checkout@v4
-      - run: docker build -t shoppee-cybersec:teste .
+
+      - name: Login no GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Build
+        run: |
+          docker build \
+            -t ghcr.io/ralphsblue/shoppee-cybersec:${{ github.sha }} \
+            -t ghcr.io/ralphsblue/shoppee-cybersec:latest \
+            .
+
+      - name: Push
+        run: docker push --all-tags ghcr.io/ralphsblue/shoppee-cybersec
