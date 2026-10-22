@@ -2,11 +2,11 @@ name: shoppee-cybersec
 
 services:
   app:
-    build: .
+    image: ghcr.io/ralphsblue/shoppee-cybersec:${IMAGEM_TAG:-latest}
     ports:
       - "127.0.0.1:3000:3000"
     volumes:
-      - dados:/app/data        # onde fica o arquivo .db (ver abaixo)
+      - dados:/app/data
       - uploads:/app/uploads
     restart: unless-stopped
 
